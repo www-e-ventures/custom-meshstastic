@@ -15,14 +15,6 @@ echo "--------------------------------------"
 echo "Building..."
 pio run -e t-deck
 
-# 3. (Optional) Upload if device is connected
-# Uncomment the next lines to auto-flash
-# echo "Uploading..."
-# pio run -e t-deck --target upload
-
-# 4. (Optional) Open Serial Monitor
-# pio device monitor
-
 echo "--------------------------------------"
 echo "   Build Complete!                    "
 echo "--------------------------------------"
