@@ -9,7 +9,7 @@ echo "--------------------------------------"
 
 # 1. Clean previous builds (optional, but good for "clean" releases)
 # echo "Cleaning..."
-# pio run --target clean -e t-deck
+pio run --target clean -e t-deck
 
 # 2. Build the firmware
 echo "Building..."
