@@ -14,7 +14,7 @@ pio run --target clean -e t-deck-tft
 
 # 2. Build the firmware
 echo "Building..."
-pio run -e t-deck t-deck-tft
+pio run -e t-deck-tft
 
 echo "--------------------------------------"
 echo "   Build Complete!                    "
