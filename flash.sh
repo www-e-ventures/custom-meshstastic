@@ -7,7 +7,7 @@ echo "--------------------------------------"
 echo "   Flashing Meshtastic for T-Deck     "
 echo "--------------------------------------"
 
-
+pio run -e t-deck-tft --target erase
 pio run -e t-deck-tft --target upload
 pio run -e t-deck-tft --target uploadfs
 
