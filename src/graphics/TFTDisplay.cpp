@@ -1,6 +1,6 @@
 #include "configuration.h"
 #include "main.h"
-
+//TFTDisplay.cpp
 #if ARCH_PORTDUINO
 #include "platform/portduino/PortduinoGlue.h"
 #endif
@@ -1225,24 +1225,22 @@ void TFTDisplay::display(bool fromBlank)
     if (somethingChanged)
         {memcpy(buffer_back, buffer, displayBufferSize);}
 
+    //SEA e.ventures
     //FORCE TEXT OVERLAY ON BOOT
-    if (millis() < 5000) { //first 5 seconds
-        //set colour to white
-        this->setColor(WHITE);
+    //DIRECT HARDWARE DRAW
+    if (millis() < 5000) {
 
-        //black box
-        //setColor(BLACK) then fillRect, because setBackgroundColor doesn't exist here
-        this->setColor(BLACK);
-        this->fillRect(0, 0, 320, 240);
-        //text colour
-        this->setColor(WHITE);
+        tft->setColor(TFT_BLACK);
+        tft->fillRect(0, 0, 320, 240);
 
-        //text
-        this->setTextAlignment(TEXT_ALIGN_CENTER);
-        this->setFont(FONT_LARGE);
-        this->drawString(160, 100, "OffGridComms by e.ventures"); //320/2=160
-        this->setFont(FONT_SMALL);
-        this->drawString(160, 130, "https://e.ventures");
+
+        tft->setTextColor(TFT_WHITE);
+        tft->setTextDatum(middle_center); //center
+        tft->setTextSize(2);              //big
+        tft->drawString("Custom Deck v1", 160, 100);
+
+        tft->setTextSize(1);
+        tft->drawString("https://e.ventures", 160, 140);
     }
     // =======================================
 
