@@ -459,6 +459,16 @@ void Screen::handleSetOn(bool on, FrameCallback einkScreensaver)
     }
 }
 
+    //Custom Boot Screen
+    void myCustomBootScreen(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y) {
+    display->setTextAlignment(TEXT_ALIGN_CENTER);
+    display->setFont(FONT_LARGE);
+    display->drawString(display->getWidth() / 2, display->getHeight() / 2 - 10, "https://e.ventures");
+    display->setFont(FONT_SMALL);
+    display->drawString(display->getWidth() / 2, display->getHeight() / 2 + 15, "v1.0");
+}
+
+
 void Screen::setup()
 {
 
@@ -607,6 +617,10 @@ void Screen::setup()
 
     // === Notify modules that support UI events ===
     MeshModule::observeUIEvents(&uiFrameEventObserver);
+    //FORCE CUSTOM BOOT
+    static FrameCallback bootFrames[] = { myCustomBootScreen };
+    ui->setFrames(bootFrames, 1);
+    ui->update(); //immediately
 }
 
 void Screen::forceDisplay(bool forceUiUpdate)
@@ -665,8 +679,8 @@ int32_t Screen::runOnce()
     }
     menuHandler::handleMenuSwitch(dispdev);
 
-    // Show boot screen for first logo_timeout seconds, then switch to normal operation.
-    // serialSinceMsec adjusts for additional serial wait time during nRF52 bootup
+    //show boot screen for first logo_timeout seconds, then switch to normal operation.
+    //serialSinceMsec adjusts for additional serial wait time during nRF52 bootup
     static bool showingBootScreen = true;
     if (showingBootScreen && (millis() > (logo_timeout + serialSinceMsec))) {
         LOG_INFO("Done with boot screen");
@@ -675,9 +689,9 @@ int32_t Screen::runOnce()
     }
 
 #ifdef USERPREFS_OEM_TEXT
-    static bool showingOEMBootScreen = true;
+    static bool showingOEMBootScreen = false//true; leaves runOnce alone and rely on Startup to show custom boot
     if (showingOEMBootScreen && (millis() > ((logo_timeout / 2) + serialSinceMsec))) {
-        LOG_INFO("Switch to OEM screen...");
+        LOG_INFO("Switch to OEM screen....");
         // Change frames.
         static FrameCallback bootOEMFrames[] = {graphics::UIRenderer::drawOEMBootScreen};
         static const int bootOEMFrameCount = sizeof(bootOEMFrames) / sizeof(bootOEMFrames[0]);

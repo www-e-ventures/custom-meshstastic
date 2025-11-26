@@ -832,12 +832,22 @@ void UIRenderer::drawIconScreen(const char *upperMsg, OLEDDisplay *display, OLED
     // needs to be drawn relative to x and y
 
     // draw centered icon left to right and centered above the one line of app text
-    display->drawXbm(x + (SCREEN_WIDTH - icon_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - icon_height) / 2 + 2,
-                     icon_width, icon_height, icon_bits);
+//logo image   src/graphics/images.h
+//  display->drawXbm(x + (SCREEN_WIDTH - icon_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - icon_height) / 2 + 2,
+  //                   icon_width, icon_height, icon_bits);
+/// SEA
+
+    display->setFont(FONT_LARGE);
+    display->setTextAlignment(TEXT_ALIGN_CENTER);
+    display->drawString(display->getWidth() / 2, display->getHeight() / 2, "https://e.ventures");
+    display->setFont(FONT_SMALL);
+    display->drawString(x + (SCREEN_WIDTH / 2), y + (SCREEN_HEIGHT / 2) + 10, "https://e.ventures");
+
+/// END SEA
 
     display->setFont(FONT_MEDIUM);
     display->setTextAlignment(TEXT_ALIGN_LEFT);
-    const char *title = "meshtastic.org";
+    const char *title = "https://e.ventures";
     display->drawString(x + getStringCenteredX(title), y + SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM, title);
     display->setFont(FONT_SMALL);
 
