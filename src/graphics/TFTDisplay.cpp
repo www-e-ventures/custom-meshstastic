@@ -1223,7 +1223,30 @@ void TFTDisplay::display(bool fromBlank)
     }
     // Copy the Buffer to the Back Buffer
     if (somethingChanged)
-        memcpy(buffer_back, buffer, displayBufferSize);
+        {memcpy(buffer_back, buffer, displayBufferSize);}
+
+    // FORCE TEXT OVERLAY ON BOOT
+    if (millis() < 5000) { //first 5 seconds
+        //text color to WHITE, background to BLACK
+        this->setColor(OLEDDISPLAY_COLOR_WHITE);
+        this->setBackgroundColor(OLEDDISPLAY_COLOR_BLACK);
+
+        //black box
+        this->fillRect(0, 0, 320, 240);
+
+        //text
+        this->setTextAlignment(TEXT_ALIGN_CENTER);
+        this->setFont(FONT_LARGE);
+        this->drawString(160, 100, "Custom Deck v1"); //160 320/2
+        this->setFont(FONT_SMALL);
+        this->drawString(160, 130, "https://e.ventures");
+    }
+    // =======================================
+
+
+
+
+
 }
 
 void TFTDisplay::sdlLoop()

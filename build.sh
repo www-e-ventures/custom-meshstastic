@@ -7,8 +7,8 @@ echo "--------------------------------------"
 echo "   Building Meshtastic for T-Deck     "
 echo "--------------------------------------"
 
-# 1. Clean previous builds (optional, but good for "clean" releases)
-# echo "Cleaning..."
+# 1. Clean previous builds
+echo "Cleaning..."
 pio run --target clean -e t-deck
 pio run --target clean -e t-deck-tft
 
