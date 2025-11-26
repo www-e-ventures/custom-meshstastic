@@ -1,0 +1,41 @@
+--------------------------------------
+   DEPLOYING MESHTASTIC FOR T-DECK    
+   Environment: t-deck-tft                  
+--------------------------------------
+[1/5] Cleaning previous builds...
+Processing t-deck-tft (board: t-deck; platform: 
+platformio/espressif32@6.11.0; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+Removing .pio/build/t-deck-tft
+Done cleaning
+========================= [SUCCESS] Took 0.69 seconds =========================
+
+Environment    Status    Duration
+-------------  --------  ------------
+t-deck-tft     SUCCESS   00:00:00.693
+========================= 1 succeeded in 00:00:00.693 =========================
+[2/5] Building firmware...
+Processing t-deck-tft (board: t-deck; platform: 
+platformio/espressif32@6.11.0; framework: arduino)
+--------------------------------------------------------------------------------
+Library Manager: Installing lvgl/lvgl @ 9.3.0
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: lvgl@9.3.0 has been installed!
+Library Manager: Installing https://github.com/mverch67/SdFat/archive/152a52251fc5e1d581303b42378ea712ab229246.zip
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: SdFat@2.3.0 has been installed!
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/t-deck.html
+PLATFORM: Espressif 32 (6.11.0) > Espressif Systems LilyGO T-Deck (16 MB FLASH, 8 MB PSRAM)
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 16MB Flash
+DEBUG: Current (esp-builtin) On-board (esp-builtin) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b 
+ - tool-esptoolpy @ 1.40501.0 (4.5.1) 
+ - tool-openocd-esp32 @ 2.1100.20220706 (11.0) 
+ - toolchain-riscv32-esp @ 8.4.0+2021r2-patch5 
+ - toolchain-xtensa-esp32s3 @ 8.4.0+2021r2-patch5
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+
