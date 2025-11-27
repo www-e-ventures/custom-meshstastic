@@ -13,6 +13,9 @@
 objects_t objects;
 lv_obj_t *tick_value_change_obj;
 
+//TODO verify hidden objects
+
+
 void create_screen_boot_screen() {
     lv_obj_t *obj = lv_obj_create(0);
     objects.boot_screen = obj;
@@ -72,6 +75,8 @@ void create_screen_boot_screen() {
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             lv_label_set_text(obj, "");
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_MID, LV_PART_MAIN | LV_STATE_DEFAULT);
+            //hide version
+            lv_obj_add_flag(obj, LV_OBJ_FLAG_HIDDEN);
         }
         {
             // bootLogo
@@ -694,6 +699,7 @@ void create_screen_main_screen() {
                             lv_obj_set_size(obj, LV_PCT(80), LV_SIZE_CONTENT);
                             lv_label_set_long_mode(obj, LV_LABEL_LONG_CLIP);
                             lv_label_set_text(obj, "00:00:00:00:00:00");
+                            //TODO verify the bluetooth
                             lv_obj_add_flag(obj, LV_OBJ_FLAG_HIDDEN);
                         }
                         {
