@@ -88,7 +88,7 @@ void create_screen_boot_screen() {
             lv_obj_set_align(obj, LV_ALIGN_CENTER);
             lv_obj_set_pos(obj, 0, -20);
 
-            lv_label_set_text(obj, "OffGridComms v1\nhttps://e.ventures");
+            lv_label_set_text(obj, "OffGridComms v1\ne.ventures");
             //white and centered
             lv_obj_set_style_text_color(obj, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -852,7 +852,7 @@ void create_screen_main_screen() {
                             lv_obj_set_pos(obj, -6, 35);
                             lv_obj_set_size(obj, LV_PCT(80), LV_SIZE_CONTENT);
                             lv_label_set_long_mode(obj, LV_LABEL_LONG_SCROLL);
-                            lv_label_set_text(obj, "Meshtastic");
+                            lv_label_set_text(obj, "e.ventures");
                             lv_obj_set_style_align(obj, LV_ALIGN_TOP_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
                         }
                         {
@@ -2367,7 +2367,7 @@ void create_screen_main_screen() {
                     objects.meshtastic_image = obj;
                     lv_obj_set_pos(obj, -60, 0);
                     lv_obj_set_size(obj, 36, 17);
-                    lv_img_set_src(obj, &img_meshtastic_logo_image);
+                 //   lv_img_set_src(obj, &img_meshtastic_logo_image);
                     lv_img_set_pivot(obj, 0, 0);
                     add_style_top_image_style(obj);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -2381,7 +2381,9 @@ void create_screen_main_screen() {
                     objects.meshtastic_label = obj;
                     lv_obj_set_pos(obj, 14, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-                    lv_label_set_text(obj, _("Meshtastic"));
+                    //  center
+                    lv_obj_set_align(obj, LV_ALIGN_CENTER);
+                    lv_label_set_text(obj, _("e.ventures"));
                     lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
                     lv_obj_set_style_text_font(obj, &ui_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -5826,7 +5828,7 @@ void create_screen_main_screen() {
                             lv_obj_set_pos(obj, -5, 35);
                             lv_obj_set_size(obj, LV_PCT(80), LV_SIZE_CONTENT);
                             lv_label_set_long_mode(obj, LV_LABEL_LONG_SCROLL);
-                            lv_label_set_text(obj, "Meshtastic");
+                            lv_label_set_text(obj, "e.ventures");
                             lv_obj_set_style_align(obj, LV_ALIGN_TOP_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
                         }
                         {
