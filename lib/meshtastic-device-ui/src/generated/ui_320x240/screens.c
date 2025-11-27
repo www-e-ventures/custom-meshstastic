@@ -75,14 +75,24 @@ void create_screen_boot_screen() {
         }
         {
             // bootLogo
-            lv_obj_t *obj = lv_img_create(parent_obj);
-            objects.boot_logo = obj;
-            lv_obj_set_pos(obj, 0, -24);
-            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+        //    lv_obj_t *obj = lv_img_create(parent_obj);
+         //   objects.boot_logo = obj;
+          //  lv_obj_set_pos(obj, 0, -24);
+         //   lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             //sea
             //  lv_img_set_src(obj, &img_meshtastic_boot_logo_image);
             //lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
             //sea
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            objects.boot_logo = obj;
+            lv_obj_set_align(obj, LV_ALIGN_CENTER);
+            lv_obj_set_pos(obj, 0, -20);
+
+            lv_label_set_text(obj, "OffGridComms v1\nhttps://e.ventures");
+            //white and centered
+            lv_obj_set_style_text_color(obj, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_text_font(obj, &ui_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
         {
             // bluetoothButton

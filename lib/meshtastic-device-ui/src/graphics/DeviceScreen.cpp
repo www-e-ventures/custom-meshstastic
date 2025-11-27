@@ -1,3 +1,11 @@
+#include <Arduino.h>
+#include <WiFi.h>
+#include <WebServer.h>
+#include <ESPmDNS.h>
+#include <Update.h>
+#include <Thread.h>
+#include <TinyGPS++.h>
+#include <OneButton.h>
 #include "graphics/DeviceScreen.h"
 #include "Arduino.h"
 #include "graphics/common/ViewFactory.h"
