@@ -11,6 +11,7 @@
 #include "graphics/common/ViewFactory.h"
 #include "util/ILog.h"
 
+
 #if defined(ARDUINO_ARCH_ESP32)
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
